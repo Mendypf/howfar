@@ -109,14 +109,18 @@ def around_view(lat, lon, radius=450.0):
                     seg = []
             if len(seg) >= 2: poly(seg, (235, 190, 60), None, 3, line=True)
     walls = []
-    for b in mapdata.buildings(lat, lon, radius * 1.45):
+    near = mapdata.buildings(lat, lon, radius * 1.45)
+    seen_ids = {b["id"] for b in near}
+    # tall things further out still show above the roofline: towers up to 3 km (landmarks the agent can match)
+    far = [b for b in mapdata.buildings(lat, lon, 3000) if b["h"] and b["h"] >= 40 and b["dist"] > radius]
+    for b in list(near) + far:
         if b["part"]:
             continue
         h = b["h"] or 9.0
         xy = b["xy"]
         for (x0, y0), (x1, y1) in zip(xy, xy[1:] + xy[:1]):
             d = math.hypot((x0 + x1) / 2, (y0 + y1) / 2)
-            if d <= radius:
+            if d <= radius or (b["h"] and b["h"] >= 40 and d <= 3000):
                 walls.append((d, (x0, y0), (x1, y1), h, b))
     labels = []
     for d, p0, p1, h, b in sorted(walls, key=lambda w: -w[0]):
@@ -125,8 +129,8 @@ def around_view(lat, lon, radius=450.0):
             continue
         top0 = proj(p0[0], p0[1], h)[1]; top1 = proj(p1[0], p1[1], h)[1]
         g = int(max(70, 205 - min(h, 150) * 0.9)) if b["h"] else 200
-        near = max(0, min(1, (radius - d) / radius))
-        v = g * (0.75 + 0.25 * near)
+        nearness = max(0, min(1, (radius - d) / radius))
+        v = g * (0.75 + 0.25 * nearness)
         poly([(a[0], top0), (c[0], top1), (c[0], c[1]), (a[0], a[1])], (int(v), int(v), int(min(255, v + 8))), (60, 60, 70))
         if b["name"] or (b["h"] and b["h"] >= 40):
             labels.append((d, (a[0] + (((c[0] - a[0] + 180) % 360) - 180) / 2) % 360, max(top0, top1), b["name"], b["h"]))

@@ -5,3 +5,4 @@ howfar_out/
 .env.*
 *.log
 .cache/
+research/

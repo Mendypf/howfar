@@ -11,10 +11,10 @@ anything that can run a script and look at a picture). You send the photo, the
 agent runs the tools here, looks at what they draw, and answers with a distance
 and a range: "about 420 m to the brick building across the river", "Mount
 Rainier, 97 km". For a mountain it can also tell you how long the walk is on
-the real trails, and while you are driving it answers in road miles and
+hiking trails, and while you are driving it answers in road miles and
 minutes.
 
-It works like this. The tools read open map data (building outlines with
+The tools read open map data (building outlines with
 heights, terrain, named mountains, roads) and do the geometry. The agent does
 the looking: it recognises a landmark in the photo, or matches the photo to a
 map the tools draw, and that fixes the direction. Then a line of sight goes out
@@ -25,7 +25,7 @@ thing you mean. The whole street is in the clip, so the direction is far easier
 to find, and on a sunny day the frame where the sun blows out the picture gives
 the direction outright.
 
-No keys and no accounts. Everything comes from public open data: Overture Maps
+There are no keys and no accounts to set up. Everything comes from public open data: Overture Maps
 and OpenStreetMap for buildings and roads, the AWS terrain tiles for ground
 heights, Wikidata for mountains, the FOSSGIS Valhalla and BRouter servers for
 routes.
@@ -59,7 +59,7 @@ Every command prints one JSON block. The pictures (`map.png`, `around.png`,
 
 ## What to expect
 
-Tested on public phone photos with known answers (`tests/regression.py`):
+I tested it on public phone photos with known answers (`tests/regression.py`):
 
 - A famous tower or a named mountain somewhere in the photo: the other things
   in the picture come out within 3%. Mount Rainier from Seattle, 97.6 km
@@ -68,8 +68,7 @@ Tested on public phone photos with known answers (`tests/regression.py`):
   shortlist the agent sees, and the distance is within 10% once it picks it.
 - A full-turn video in a city: the direction came out within 19 degrees by all
   three methods on the test set. In villages and open country, where the map
-  has few buildings, the methods disagree and the agent says so instead of
-  guessing.
+  has few buildings, the methods disagree and the agent says it cannot tell.
 
 What it does not do: measure things that are not on a map (cars, people,
 trees), work indoors or through glass, or help where there is no GPS. GPS

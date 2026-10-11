@@ -11,7 +11,7 @@ Every command prints one JSON object. Pictures for the agent's eyes go to --out 
   sunpos                   where the sun is for a time and place
   clear-cache              delete downloaded map pieces
 """
-import argparse, datetime as dt, json, os, sys
+import math, argparse, datetime as dt, json, os, sys
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 from howfar import photo as P, terrain, mapdata, peaks, camera, sun, draw, solve, route, sweep, cache  # noqa: E402
@@ -108,9 +108,9 @@ def cmd_anchor(a):
         top = terrain.elev(pt[0], pt[1], 13) + (found["height_m"] or 20)
         if not found["height_m"]:
             found["note"] = "building height unknown on the map; its top is a poor tilt reference, keep tilt loose"
-    a_el = __import__("math").degrees(__import__("math").atan2(top - h_eye - drop(found["dist_m"]), found["dist_m"]))
+    a_el = math.degrees(math.atan2(top - h_eye - drop(found["dist_m"]), found["dist_m"]))
     heading, th = camera.solve_pose(a.w, a.h, a.f35, a.x, a.y, found["bearing"], a_el)
-    out_json({"anchor": found, "anchor_angle_above_level": round(a_el, 2), "camera_heading": round(heading, 2), "camera_tilt": round(__import__("math").degrees(th), 2),
+    out_json({"anchor": found, "anchor_angle_above_level": round(a_el, 2), "camera_heading": round(heading, 2), "camera_tilt": round(math.degrees(th), 2),
               "note": "heading from an anchor is good to about 1 degree; tilt from a tall thing's top can be 1 degree off (antenna, spire)"})
 
 

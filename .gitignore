@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+howfar_out/
+.env
+.env.*
+*.log
+.cache/

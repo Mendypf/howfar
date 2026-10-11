@@ -1,0 +1,248 @@
+{
+ "about": "Public Wikimedia Commons phone photos of known landmarks. Facts from their EXIF; spots (x, y fractions of the frame) read off a gridded copy by hand. Truth = WGS84 distance from the photo's GPS fix to the landmark.",
+ "landmarks": {
+  "Mount Hood": {
+   "lat": 45.37361,
+   "lon": -121.69583,
+   "top_m": 3429,
+   "mountain": true
+  },
+  "Mount Shasta": {
+   "lat": 41.40919,
+   "lon": -122.19494,
+   "top_m": 4322,
+   "mountain": true
+  },
+  "Half Dome": {
+   "lat": 37.74604,
+   "lon": -119.53294,
+   "top_m": 2695,
+   "mountain": true
+  },
+  "Mount Fuji": {
+   "lat": 35.36056,
+   "lon": 138.7275,
+   "top_m": 3776,
+   "mountain": true
+  },
+  "Mount Rainier": {
+   "lat": 46.85278,
+   "lon": -121.76056,
+   "top_m": 4392,
+   "mountain": true
+  },
+  "Little Tahoma": {
+   "lat": 46.84972,
+   "lon": -121.71222,
+   "top_m": 3395,
+   "mountain": true
+  },
+  "CN Tower": {
+   "lat": 43.6426,
+   "lon": -79.3871,
+   "top_m": 553,
+   "mountain": false
+  },
+  "Transamerica Pyramid": {
+   "lat": 37.79517,
+   "lon": -122.40278,
+   "top_m": 260,
+   "mountain": false
+  },
+  "Salesforce Tower": {
+   "lat": 37.78981,
+   "lon": -122.39683,
+   "top_m": 326,
+   "mountain": false
+  },
+  "Space Needle": {
+   "lat": 47.62039,
+   "lon": -122.34917,
+   "top_m": 184,
+   "mountain": false
+  },
+  "The Shard": {
+   "lat": 51.50444,
+   "lon": -0.08639,
+   "top_m": 310,
+   "mountain": false
+  }
+ },
+ "photos": {
+  "17": {
+   "title": "File:Mount Rainier from Summerland - Flickr - brewbooks.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Mount_Rainier_from_Summerland_-_Flickr_-_brewbooks.jpg",
+   "lat": 46.86465833333334,
+   "lon": -121.65968322222223,
+   "alt": 1790.0,
+   "w": 4128,
+   "h": 3096,
+   "f35": 31.0,
+   "dir": 228.0,
+   "dir_ref": "M",
+   "model": "SCH-I545",
+   "when_local": "2015:09:12 11:46:23"
+  },
+  "9": {
+   "title": "File:CN Tower seen from Duncan Street.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:CN_Tower_seen_from_Duncan_Street.jpg",
+   "lat": 43.649280555555556,
+   "lon": -79.38900833333334,
+   "alt": 85.85390476190476,
+   "w": 3024,
+   "h": 4032,
+   "f35": 26.0,
+   "dir": 186.153076171875,
+   "dir_ref": "T",
+   "model": "iPhone XS Max",
+   "when_local": "2019:08:24 17:07:44"
+  },
+  "11": {
+   "title": "File:Transamerica Pyramid from Grant Avenue (July 2022).JPG",
+   "page": "https://commons.wikimedia.org/wiki/File:Transamerica_Pyramid_from_Grant_Avenue_(July_2022).JPG",
+   "lat": 37.797374999999995,
+   "lon": -122.40695277777779,
+   "alt": 21.30285313376988,
+   "w": 2216,
+   "h": 3616,
+   "f35": 108.0,
+   "dir": 114.92876434841324,
+   "dir_ref": "T",
+   "model": "iPhone 13",
+   "when_local": "2022:07:20 16:19:59"
+  },
+  "12": {
+   "title": "File:Salesforce Tower from Sacramento and Davis Street 2021.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Salesforce_Tower_from_Sacramento_and_Davis_Street_2021.jpg",
+   "lat": 37.79454722222222,
+   "lon": -122.39786666666667,
+   "alt": 5.332531242722968,
+   "w": 2268,
+   "h": 4032,
+   "f35": 39.0,
+   "dir": 159.1995085995086,
+   "dir_ref": "T",
+   "model": "iPhone XS",
+   "when_local": "2021:04:02 17:41:15"
+  },
+  "13": {
+   "title": "File:Seattle 2018.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Seattle_2018.jpg",
+   "lat": 47.62925277777778,
+   "lon": -122.36057222222222,
+   "alt": 100.54617414248021,
+   "w": 3264,
+   "h": 2448,
+   "f35": 86.0,
+   "dir": 136.33898305084745,
+   "dir_ref": "T",
+   "model": "iPhone 6",
+   "when_local": "2018:09:24 17:44:24"
+  },
+  "14": {
+   "title": "File:The Shard, from Mint Street Park.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:The_Shard,_from_Mint_Street_Park.jpg",
+   "lat": 51.50233055555555,
+   "lon": -0.09655277777777778,
+   "alt": 50.6,
+   "w": 3072,
+   "h": 4080,
+   "f35": 48.0,
+   "dir": 250.0,
+   "dir_ref": "M",
+   "model": null,
+   "when_local": "2023:07:29 15:03:12"
+  }
+ },
+ "chain_cases": [
+  {
+   "photo": 13,
+   "anchor": {
+    "name": "Space Needle",
+    "x": 0.212,
+    "y": 0.305
+   },
+   "target": {
+    "name": "Mount Rainier",
+    "x": 0.775,
+    "y": 0.445
+   }
+  },
+  {
+   "photo": 13,
+   "anchor": {
+    "name": "Mount Rainier",
+    "x": 0.775,
+    "y": 0.445
+   },
+   "target": {
+    "name": "Space Needle",
+    "x": 0.212,
+    "y": 0.305
+   }
+  },
+  {
+   "photo": 17,
+   "anchor": {
+    "name": "Mount Rainier",
+    "x": 0.5,
+    "y": 0.375
+   },
+   "target": {
+    "name": "Little Tahoma",
+    "x": 0.29,
+    "y": 0.34
+   }
+  },
+  {
+   "photo": 17,
+   "anchor": {
+    "name": "Little Tahoma",
+    "x": 0.29,
+    "y": 0.34
+   },
+   "target": {
+    "name": "Mount Rainier",
+    "x": 0.5,
+    "y": 0.375
+   }
+  }
+ ],
+ "tower_cases": [
+  {
+   "photo": 9,
+   "name": "CN Tower",
+   "x": 0.41,
+   "y": 0.4,
+   "declination": 0
+  },
+  {
+   "photo": 11,
+   "name": "Transamerica Pyramid",
+   "x": 0.52,
+   "y": 0.07,
+   "declination": 0
+  },
+  {
+   "photo": 12,
+   "name": "Salesforce Tower",
+   "x": 0.515,
+   "y": 0.32,
+   "declination": 0
+  },
+  {
+   "photo": 13,
+   "name": "Space Needle",
+   "x": 0.212,
+   "y": 0.31,
+   "declination": 0
+  },
+  {
+   "photo": 14,
+   "name": "The Shard",
+   "x": 0.53,
+   "y": 0.385,
+   "declination": 0.6
+  }
+ ]
+}
